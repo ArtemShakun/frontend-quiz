@@ -1,0 +1,17 @@
+.selection {
+  display: flex;
+  align-items: center;
+  width: 564px;
+  height: 96px;
+  padding: 0 20px;
+  box-shadow: $shadow;
+  border-radius: $radius;
+  &__text {
+    margin-left: 32px;
+  }
+
+  &__img {
+    width: 56px;
+    height: 56px;
+  }
+}

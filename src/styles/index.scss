@@ -1,3 +1,29 @@
+// COLORS
+$purple-color: #a729f5;
+$navy-color: #3b4d66;
+$dark-navy-color: #313e51;
+$grey-navy-color: #626c7f;
+$light-grey-color: #f4f6fa;
+$light-bluish-color: #abc1e1;
+$white-color: #fff;
+$green-color: #26d782;
+$red-color: #ee5454;
+
+// SHADOW
+$shadow: 0 16px 40px 16px rgba(143, 160, 193, 0.14);
+
+// BorderRadius
+$radius: 24px;
+
+// FONTS
+// $font-family: 'Rubik';
+
+$font-size-h1: 9rem;
+$font-size-h2: 4rem;
+$font-size-h3: 2.25rem;
+$font-size-h4: 1.75rem;
+$font-size-p: 0.75rem;
+
 * {
   padding: 0;
   margin: 0;
@@ -16,5 +42,60 @@
     -webkit-tap-highlight-color: transparent;
   }
 }
+body {
+  font-family: 'Rubik', sans-serif;
+}
+
+body[data-theme='light'] {
+  background-color: $light-grey-color;
+  color: $dark-navy-color;
+}
+
+body[data-theme='dark'] {
+  background-color: $dark-navy-color;
+  color: $light-grey-color;
+}
+
+.h1 {
+  font-weight: 500;
+  line-height: 100%;
+  font-size: $font-size-h1;
+}
+
+.h2 {
+  font-weight: 500;
+  line-height: 100%;
+  font-size: $font-size-h2;
+}
+
+.h2-sub-title {
+  font-weight: 400;
+}
+
+.h3 {
+  font-weight: 500;
+  line-height: 100%;
+  font-size: $font-size-h3;
+}
+
+.h4 {
+  font-weight: 500;
+  line-height: 100%;
+  font-size: $font-size-h4;
+}
+
+p {
+  font-weight: 400;
+  line-height: 150%;
+  font-size: $font-size-p;
+}
+
+p > .italic {
+  font-style: italic;
+}
 
 @import '../components/pages/header/index.scss';
+@import '../components/common/button/index.scss';
+@import '../components/common/selection/index.scss';
+@import '../components/common/section-icon/index.scss';
+@import '../components/common/theme-switcher/index.scss';

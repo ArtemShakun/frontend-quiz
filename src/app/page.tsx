@@ -1,11 +1,6 @@
-import styles from './page.module.css';
+import '../styles/index.scss';
+import { HomePage } from '@/components/pages/home-page/home-page';
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>Hello from Home component</p>
-      </div>
-    </main>
-  );
+  return <HomePage />;
 }
