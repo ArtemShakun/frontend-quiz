@@ -93,9 +93,15 @@ p {
 p > .italic {
   font-style: italic;
 }
+.wrapper {
+  max-width: 1160px;
+  margin: 0 auto;
+  height: 100vh;
+}
 
 @import '../components/pages/header/index.scss';
 @import '../components/common/button/index.scss';
 @import '../components/common/selection/index.scss';
 @import '../components/common/section-icon/index.scss';
 @import '../components/common/theme-switcher/index.scss';
+@import '../components/pages/home-page/index.scss';
