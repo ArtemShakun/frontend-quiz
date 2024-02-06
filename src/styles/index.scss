@@ -1,0 +1,20 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+  backdrop-filter: none;
+  -webkit-tap-highlight-color: transparent;
+  font-display: optional;
+
+  &:hover,
+  &:focus {
+    -webkit-appearance: none;
+    appearance: none;
+    backdrop-filter: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@import '../components/pages/header/index.scss';
