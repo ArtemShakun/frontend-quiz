@@ -1,14 +1,34 @@
-import { Button } from '@/components/common/button/button';
+'use client';
 import { Selection } from '@/components/common/selection/selection';
-import { ThemeSwitcher } from '@/components/common/theme-switcher/theme-switcher';
-import html from '@/assets/html-icon.svg';
 
-export function HomePage() {
+type Card = {
+  icon: string;
+  title: string;
+};
+
+type PropsContentType = {
+  title: string;
+  subtitle: string;
+  cards?: Card[];
+};
+
+export function Content(data: PropsContentType) {
+  const { title, subtitle, cards } = data;
+
   return (
-    <main>
-      <Button text={'Submit Answer'} />
-      <Selection url={html} text="HTML" />
-      <ThemeSwitcher />
+    <main className="content">
+      <div className="bg"></div>
+      <section>
+        <div dangerouslySetInnerHTML={{ __html: title }}></div>
+        <div dangerouslySetInnerHTML={{ __html: subtitle }}></div>
+      </section>
+      <section>
+        {cards?.map(item => (
+          <a href="" key={item.title}>
+            <Selection {...item} />
+          </a>
+        ))}
+      </section>
     </main>
   );
 }

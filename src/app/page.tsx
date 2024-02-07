@@ -1,6 +1,24 @@
 import '../styles/index.scss';
-import { HomePage } from '@/components/pages/home-page/home-page';
+import { Content } from '@/components/pages/home-page/home-page';
+import { Header } from '@/components/pages/header/header';
+
+const mockData = {
+  title: `<h2 style="font-weight: normal;line-height: 100%;font-size:64px;">Welcome to the</h2> <h2 style="font-weight: bold;line-height: 100%;font-size:64px;">Frontend Quiz!</h2>`,
+  subtitle:
+    '<p style="font-style: italic;margin-top: 48px;">Pick a subject to get started.</p>',
+  cards: [
+    { icon: 'html-icon.svg', title: 'HTML' },
+    { icon: 'css-icon.svg', title: 'CSS' },
+    { icon: 'js-icon.svg', title: 'JavaScript' },
+    { icon: 'accessibility-icon.svg', title: 'Accessibility' },
+  ],
+};
 
 export default function Home() {
-  return <HomePage />;
+  return (
+    <>
+      <Header />
+      <Content {...mockData} />
+    </>
+  );
 }
