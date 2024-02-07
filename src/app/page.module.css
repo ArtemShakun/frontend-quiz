@@ -14,7 +14,6 @@
   font-size: 0.85rem;
   max-width: var(--max-width);
   width: 100%;
-  z-index: 2;
   font-family: var(--font-mono);
 }
 
@@ -93,12 +92,11 @@
   background: var(--primary-glow);
   width: 240px;
   height: 180px;
-  z-index: -1;
 }
 
 .center::before,
 .center::after {
-  content: "";
+  content: '';
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -199,7 +197,6 @@
       transparent 0%,
       rgb(var(--background-end-rgb)) 40%
     );
-    z-index: 1;
   }
 }
 

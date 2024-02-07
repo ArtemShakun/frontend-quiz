@@ -1,4 +1,6 @@
+'use client';
 import Image from 'next/image';
+import { useState } from 'react';
 
 type PropsSelectionType = {
   icon: string;
@@ -8,11 +10,17 @@ type PropsSelectionType = {
 
 export function Selection(item: PropsSelectionType) {
   const { icon, title } = item;
+
   return (
     <div className="selection">
-      <Image src={icon} alt="icon" className="selection__img" />
+      <Image
+        className="selection__img"
+        src={`/assets/${icon}`}
+        alt="icon"
+        width={56}
+        height={56}
+      />
       <h2 className="selection__text h4">{title}</h2>
-      {icon && <Image src={icon} alt="icon" />}
     </div>
   );
 }

@@ -1,16 +1,11 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import sunG from '@/assets/sun-grey-icon.svg';
-import sunW from '@/assets/sun-white-icon.svg';
-import moonG from '@/assets/moon-grey-icon.svg';
-import moonW from '@/assets/moon-white-icon.svg';
 
 export function ThemeSwitcher() {
   const [isDark, setDark] = useState(false);
-  const sunIcon = isDark ? sunW : sunG;
-  const moonIcon = isDark ? moonW : moonG;
-  console.log(isDark);
+  const sunIcon = isDark ? 'sun-white-icon.svg' : 'sun-grey-icon.svg';
+  const moonIcon = isDark ? 'moon-white-icon.svg' : 'moon-grey-icon.svg';
 
   useEffect(() => {
     document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
@@ -18,7 +13,7 @@ export function ThemeSwitcher() {
 
   return (
     <section className="theme-switcher">
-      <Image src={sunIcon} alt="icon" />
+      <Image src={`/assets/${sunIcon}`} alt="icon" width={24} height={24} />
       <label className="switch">
         <input
           type="checkbox"
@@ -27,7 +22,7 @@ export function ThemeSwitcher() {
         />
         <span className="slider round"></span>
       </label>
-      <Image src={moonIcon} alt="icon" />
+      <Image src={`/assets/${moonIcon}`} alt="icon" width={24} height={24} />
     </section>
   );
 }

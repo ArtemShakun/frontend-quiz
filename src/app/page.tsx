@@ -3,13 +3,14 @@ import { Content } from '@/components/pages/home-page/home-page';
 import { Header } from '@/components/pages/header/header';
 
 const mockData = {
-  title: 'Welcome to the Frontend Quiz!',
-  subtitle: 'Pick a subject to get started.',
+  title: `<h2 style="font-weight: normal;line-height: 100%;font-size:64px;">Welcome to the</h2> <h2 style="font-weight: bold;line-height: 100%;font-size:64px;">Frontend Quiz!</h2>`,
+  subtitle:
+    '<p style="font-style: italic;margin-top: 48px;">Pick a subject to get started.</p>',
   cards: [
-    { icon: '', title: 'HTML' },
-    { icon: '', title: 'CSS' },
-    { icon: '', title: 'JavaScript' },
-    { icon: '', title: 'Accessibility' },
+    { icon: 'html-icon.svg', title: 'HTML' },
+    { icon: 'css-icon.svg', title: 'CSS' },
+    { icon: 'js-icon.svg', title: 'JavaScript' },
+    { icon: 'accessibility-icon.svg', title: 'Accessibility' },
   ],
 };
 

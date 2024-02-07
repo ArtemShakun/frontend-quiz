@@ -1,8 +1,5 @@
-import { Button } from '@/components/common/button/button';
+'use client';
 import { Selection } from '@/components/common/selection/selection';
-import { ThemeSwitcher } from '@/components/common/theme-switcher/theme-switcher';
-import html from '@/assets/html-icon.svg';
-import { Header } from '../header/header';
 
 type Card = {
   icon: string;
@@ -10,8 +7,8 @@ type Card = {
 };
 
 type PropsContentType = {
-  title?: string;
-  subtitle?: string;
+  title: string;
+  subtitle: string;
   cards?: Card[];
 };
 
@@ -20,13 +17,16 @@ export function Content(data: PropsContentType) {
 
   return (
     <main className="content">
+      <div className="bg"></div>
       <section>
-        <h1 className="h2">{title}</h1>
-        <p className="italic">{subtitle}</p>
+        <div dangerouslySetInnerHTML={{ __html: title }}></div>
+        <div dangerouslySetInnerHTML={{ __html: subtitle }}></div>
       </section>
       <section>
         {cards?.map(item => (
-          <Selection {...item} key={item.title} />
+          <a href="" key={item.title}>
+            <Selection {...item} />
+          </a>
         ))}
       </section>
     </main>

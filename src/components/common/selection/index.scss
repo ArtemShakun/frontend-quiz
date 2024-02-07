@@ -5,8 +5,17 @@
   height: 96px;
   padding: 0 20px;
   box-shadow: $shadow;
+  background-color: $white-color;
   border-radius: $radius;
   margin-bottom: 24px;
+  cursor: pointer;
+
+  &:hover {
+    border-width: 2px;
+    border-style: solid;
+    border-color: $purple-color;
+  }
+
   &__text {
     margin-left: 32px;
   }
