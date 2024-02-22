@@ -71,6 +71,7 @@ export function QuizPage({ quiz }: PropsQuizType) {
       {currentQuizIndex === 10 ? (
         <QuizCompleted
           score={score}
+          setScore={setScore}
           resetQuiz={resetQuiz}
           setCurrentQuizIndex={setCurrentQuizIndex}
         />

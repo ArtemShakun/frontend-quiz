@@ -2,15 +2,22 @@ import { Button } from '@/components/common/button/button';
 
 type QuizCompletedProps = {
   score: number;
+  setScore: (num: number) => void;
   resetQuiz: () => void;
   setCurrentQuizIndex: (num: number) => void;
 };
 
 export function QuizCompleted({
   score,
+  setScore,
   resetQuiz,
   setCurrentQuizIndex,
 }: QuizCompletedProps) {
+  const handleResetOptions = () => {
+    setCurrentQuizIndex(0);
+    setScore(0);
+  };
+
   return (
     <>
       <section>
@@ -29,7 +36,7 @@ export function QuizCompleted({
             <p className="result__block-inf-subtitle">out of 10</p>
           </div>
         </div>
-        <button className="btn h4" onClick={() => setCurrentQuizIndex(0)}>
+        <button className="btn h4" onClick={handleResetOptions}>
           Play Again
         </button>
       </section>
