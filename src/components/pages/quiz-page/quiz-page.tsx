@@ -4,6 +4,8 @@ import { ProgressBar } from '@/components/common/progress_bar/progress_bar';
 import { SelectionQuiz } from '@/components/common/section-quiz/section-quiz';
 import { Selection } from '@/components/common/selection/selection';
 import { useEffect, useState } from 'react';
+import { QuizStarted } from '../quiz-started/quiz-started';
+import { QuizCompleted } from '../quiz-page-completed/quiz-completed';
 
 type PropsQuizType = {
   quiz: QuizItem[];
@@ -27,10 +29,9 @@ export function QuizPage({ quiz }: PropsQuizType) {
   const [score, setScore] = useState<number>(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showResult, setShowResult] = useState<boolean>(false);
-  const [errorMsg, setErrorMasg] = useState<Boolean>(false);
+  const [errorMsg, setErrorMasg] = useState<boolean>(false);
 
   const currentQuestion = quiz[currentQuizIndex];
-  const variantsLetter = ['A', 'B', 'C', 'D'];
 
   const handleSelection = (id: number | null) => {
     setSelectedAnswer(id);
@@ -66,31 +67,26 @@ export function QuizPage({ quiz }: PropsQuizType) {
   return (
     <main className="content">
       <span className="bg"></span>
-      <section>
-        <p style={{ fontStyle: 'italic' }}>
-          Question {currentQuizIndex + 1} of 10
-        </p>
-        <div className="content__title h4">{currentQuestion.question}</div>
-        <ProgressBar progress={currentQuizIndex + 1} />
-      </section>
-      <section>
-        {currentQuestion.options.map((option, index) => (
-          <SelectionQuiz
-            key={option.id}
-            id={option.id}
-            variant={option.variant}
-            letter={variantsLetter[index]}
-            isSelected={selectedAnswer === option.id}
-            isCorrect={showResult && option.variant === currentQuestion.answer}
-            handleSelection={handleSelection}
-            disabled={showResult}
-          />
-        ))}
-        <button className="btn h4" onClick={!checked ? checkAnswer : nextStep}>
-          {!checked ? 'Submit Answer' : 'Next Question'}
-        </button>
-        {errorMsg && <p className="content__error">Please select answer</p>}
-      </section>
+
+      {currentQuizIndex === 10 ? (
+        <QuizCompleted
+          score={score}
+          resetQuiz={resetQuiz}
+          setCurrentQuizIndex={setCurrentQuizIndex}
+        />
+      ) : (
+        <QuizStarted
+          currentQuizIndex={currentQuizIndex}
+          currentQuestion={currentQuestion}
+          selectedAnswer={selectedAnswer}
+          showResult={showResult}
+          handleSelection={handleSelection}
+          checked={checked}
+          errorMsg={errorMsg}
+          checkAnswer={checkAnswer}
+          nextStep={nextStep}
+        />
+      )}
     </main>
   );
 }
