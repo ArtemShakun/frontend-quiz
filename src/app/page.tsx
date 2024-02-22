@@ -1,6 +1,6 @@
 import '../styles/index.scss';
 import { Content } from '@/components/pages/home-page/home-page';
-import { Header } from '@/components/pages/header/header';
+import { Header } from '@/components/common/header/header';
 
 const mockData = {
   title: `<h2 style="font-weight: normal;line-height: 100%;font-size:64px;">Welcome to the</h2> <h2 style="font-weight: bold;line-height: 100%;font-size:64px;">Frontend Quiz!</h2>`,

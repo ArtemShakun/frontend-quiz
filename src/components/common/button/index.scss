@@ -9,6 +9,7 @@
   box-shadow: $shadow;
   border: none;
   border-radius: $radius;
+  margin-top: 32px;
   &:hover {
     background-color: lighten($purple-color, 10%);
   }

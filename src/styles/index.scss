@@ -68,18 +68,20 @@ body[data-theme='dark'] {
   max-width: 1160px;
   margin: 0 auto;
   z-index: 1;
+  position: relative;
 }
 
 .bg {
   z-index: -2;
+  position: absolute;
 }
 
 .bg::before,
 .bg::after {
   content: '';
   position: absolute;
-  width: 977px;
-  height: 977px;
+  width: 777px;
+  height: 777px;
   border: 144px solid #edf1f9;
   border-radius: 50%;
 }
@@ -90,8 +92,8 @@ body[data-theme='dark'] {
 }
 
 .bg::after {
-  bottom: -900px;
-  right: -770px;
+  top: 150px;
+  left: 700px;
 }
 
 .h1 {
@@ -128,9 +130,12 @@ p {
   font-size: $font-size-p;
 }
 
-@import '../components/pages/header/index.scss';
+@import '../components/common/header/index.scss';
 @import '../components/common/button/index.scss';
 @import '../components/common/selection/index.scss';
 @import '../components/common/section-icon/index.scss';
 @import '../components/common/theme-switcher/index.scss';
 @import '../components/pages/home-page/index.scss';
+@import '../components/pages/quiz-page/index.scss';
+@import '../components/common/section-quiz/index.scss';
+@import '../components/common/progress_bar/index.scss';
