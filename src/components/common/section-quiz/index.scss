@@ -37,10 +37,37 @@
 }
 
 .selection-quiz.correct {
+  position: relative;
   border: 3px solid $green-color;
 }
+
+.selection-quiz.correct::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+  background-image: url('../../../../public/assets/correct-icon.svg');
+  width: 30px;
+  height: 30px;
+  z-index: 2;
+}
+
 .selection-quiz.incorrect {
+  position: relative;
   border: 3px solid $red-color;
+}
+
+.selection-quiz.incorrect::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+  background-image: url('../../../../public/assets/error-icon.svg');
+  width: 30px;
+  height: 30px;
+  z-index: 2;
 }
 
 .selection-quiz__letter.active {

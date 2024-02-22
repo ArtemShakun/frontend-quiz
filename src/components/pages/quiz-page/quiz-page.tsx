@@ -24,9 +24,10 @@ type QuizOptions = {
 export function QuizPage({ quiz }: PropsQuizType) {
   const [currentQuizIndex, setCurrentQuizIndex] = useState<number>(0);
   const [checked, setChecked] = useState<boolean>(false);
-
+  const [score, setScore] = useState<number>(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showResult, setShowResult] = useState<boolean>(false);
+  const [errorMsg, setErrorMasg] = useState<Boolean>(false);
 
   const currentQuestion = quiz[currentQuizIndex];
   const variantsLetter = ['A', 'B', 'C', 'D'];
@@ -36,8 +37,19 @@ export function QuizPage({ quiz }: PropsQuizType) {
   };
 
   const checkAnswer = () => {
-    setShowResult(true);
-    setChecked(true);
+    if (selectedAnswer) {
+      setShowResult(true);
+      setChecked(true);
+      const selectedOption = currentQuestion.options.find(
+        option => option.id === selectedAnswer,
+      );
+      if (selectedOption && selectedOption.variant === currentQuestion.answer) {
+        setScore(score + 1);
+      }
+      setErrorMasg(false);
+    } else {
+      setErrorMasg(true);
+    }
   };
 
   const nextStep = () => {
@@ -69,7 +81,7 @@ export function QuizPage({ quiz }: PropsQuizType) {
             variant={option.variant}
             letter={variantsLetter[index]}
             isSelected={selectedAnswer === option.id}
-            isCorrect={showResult && option.id === currentQuestion.id}
+            isCorrect={showResult && option.variant === currentQuestion.answer}
             handleSelection={handleSelection}
             disabled={showResult}
           />
@@ -77,6 +89,7 @@ export function QuizPage({ quiz }: PropsQuizType) {
         <button className="btn h4" onClick={!checked ? checkAnswer : nextStep}>
           {!checked ? 'Submit Answer' : 'Next Question'}
         </button>
+        {errorMsg && <p className="content__error">Please select answer</p>}
       </section>
     </main>
   );
