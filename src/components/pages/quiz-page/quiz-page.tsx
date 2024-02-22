@@ -1,9 +1,5 @@
 'use client';
-import { Button } from '@/components/common/button/button';
-import { ProgressBar } from '@/components/common/progress_bar/progress_bar';
-import { SelectionQuiz } from '@/components/common/section-quiz/section-quiz';
-import { Selection } from '@/components/common/selection/selection';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { QuizStarted } from '../quiz-started/quiz-started';
 import { QuizCompleted } from '../quiz-page-completed/quiz-completed';
 

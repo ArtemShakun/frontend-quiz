@@ -1,5 +1,6 @@
 'use client';
 import { Selection } from '@/components/common/selection/selection';
+import Link from 'next/link';
 
 type Card = {
   icon: string;
@@ -24,9 +25,9 @@ export function Content(data: PropsContentType) {
       </section>
       <section>
         {cards?.map(item => (
-          <a href="" key={item.title}>
+          <Link href={item.title} key={item.title}>
             <Selection {...item} />
-          </a>
+          </Link>
         ))}
       </section>
     </main>

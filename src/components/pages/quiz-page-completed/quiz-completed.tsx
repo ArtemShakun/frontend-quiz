@@ -1,5 +1,3 @@
-import { Button } from '@/components/common/button/button';
-
 type QuizCompletedProps = {
   score: number;
   setScore: (num: number) => void;

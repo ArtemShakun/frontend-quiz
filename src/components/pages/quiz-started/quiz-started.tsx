@@ -37,6 +37,7 @@ export function QuizStarted({
   nextStep,
 }: PropsSelectionType) {
   const variantsLetter = ['A', 'B', 'C', 'D'];
+
   return (
     <>
       <section>

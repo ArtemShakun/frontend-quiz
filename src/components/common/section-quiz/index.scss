@@ -32,6 +32,16 @@
   }
 }
 
+.selection-quiz__letter.incorrect {
+  background-color: $red-color;
+  color: $white-color;
+}
+
+.selection-quiz__letter.correct {
+  background-color: $green-color;
+  color: $white-color;
+}
+
 .selection-quiz.active {
   border: 3px solid $purple-color;
 }
