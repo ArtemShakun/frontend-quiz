@@ -1,0 +1,25 @@
+.result {
+  &__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 565px;
+    height: 388px;
+    background-color: $white-color;
+    &-inf {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      &-title {
+        margin-bottom: 40px;
+      }
+      &-subtitle {
+        margin-top: 16px;
+        color: $grey-navy-color;
+      }
+    }
+  }
+}

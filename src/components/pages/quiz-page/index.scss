@@ -1,0 +1,30 @@
+.content {
+  display: flex;
+  &__title {
+    margin-top: 27px;
+    max-width: 465px;
+  }
+  &__progress {
+    max-width: 465px;
+    border-top: 4px solid #fff;
+    height: 4px;
+    margin-top: 164px;
+  }
+  &__error {
+    color: $red-color;
+    position: relative;
+    margin-top: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__error::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: 32%;
+    background-image: url('../../../../public/assets/error-icon.svg');
+    width: 30px;
+    height: 30px;
+  }
+}
