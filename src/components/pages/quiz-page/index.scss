@@ -16,11 +16,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 50px;
   }
   &__error::before {
     content: '';
     position: absolute;
-    top: -20%;
+    top: -10%;
     left: 32%;
     background-image: url('../../../../public/assets/error-icon.svg');
     width: 30px;

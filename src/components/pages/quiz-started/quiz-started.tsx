@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+
 import { ProgressBar } from '@/components/common/progress_bar/progress_bar';
 import { SelectionQuiz } from '@/components/common/section-quiz/section-quiz';
 
@@ -36,7 +38,17 @@ export function QuizStarted({
   checkAnswer,
   nextStep,
 }: PropsSelectionType) {
+  const errorRef = useRef<HTMLDivElement | null>(null);
   const variantsLetter = ['A', 'B', 'C', 'D'];
+
+  useEffect(() => {
+    if (errorMsg && errorRef.current) {
+      errorRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end',
+      });
+    }
+  }, [errorMsg]);
 
   return (
     <>
@@ -63,7 +75,11 @@ export function QuizStarted({
         <button className="btn h4" onClick={!checked ? checkAnswer : nextStep}>
           {!checked ? 'Submit Answer' : 'Next Question'}
         </button>
-        {errorMsg && <p className="content__error">Please select answer</p>}
+        {errorMsg && (
+          <p ref={errorRef} className="content__error">
+            Please select answer
+          </p>
+        )}
       </section>
     </>
   );
