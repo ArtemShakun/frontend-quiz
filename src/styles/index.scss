@@ -1,3 +1,8 @@
+@mixin theme-styled($background-color, $text-color) {
+  background-color: $background-color;
+  color: $text-color;
+}
+
 // Variable
 // COLORS
 $purple-color: #a729f5;
@@ -9,6 +14,8 @@ $light-bluish-color: #abc1e1;
 $white-color: #fff;
 $green-color: #26d782;
 $red-color: #ee5454;
+$border-color-light: #edf1f9;
+$border-color-dark: #2d3949;
 
 // SHADOW
 $shadow: 0 16px 40px 16px rgba(143, 160, 193, 0.14);
@@ -51,11 +58,38 @@ a {
 body[data-theme='light'] {
   background-color: $light-grey-color;
   color: $dark-navy-color;
+
+  .bg::before,
+  .bg::after {
+    border: 144px solid $border-color-light;
+  }
+
+  .selection-quiz {
+    @include theme-styled($light-grey-color, $dark-navy-color);
+  }
+
+  .header__title-text {
+    color: $dark-navy-color;
+  }
 }
 
 body[data-theme='dark'] {
   background-color: $dark-navy-color;
   color: $light-grey-color;
+
+  .bg::before,
+  .bg::after {
+    border: 144px solid $border-color-dark;
+  }
+
+  .selection-quiz {
+    box-shadow: none;
+    @include theme-styled($navy-color, $light-grey-color);
+  }
+
+  .header__title-text {
+    color: $light-grey-color;
+  }
 }
 
 .wrapper {
@@ -82,7 +116,6 @@ body[data-theme='dark'] {
   position: absolute;
   width: 777px;
   height: 777px;
-  border: 144px solid #edf1f9;
   border-radius: 50%;
 }
 
