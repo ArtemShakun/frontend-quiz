@@ -13,7 +13,13 @@ export function ThemeSwitcher() {
 
   return (
     <section className="theme-switcher">
-      <Image src={`/assets/${sunIcon}`} alt="icon" width={24} height={24} />
+      <Image
+        className="theme-switcher-img"
+        src={`/assets/${sunIcon}`}
+        alt="icon"
+        width={24}
+        height={24}
+      />
       <label className="switch">
         <input
           type="checkbox"
@@ -22,7 +28,13 @@ export function ThemeSwitcher() {
         />
         <span className="slider round"></span>
       </label>
-      <Image src={`/assets/${moonIcon}`} alt="icon" width={24} height={24} />
+      <Image
+        className="theme-switcher-img"
+        src={`/assets/${moonIcon}`}
+        alt="icon"
+        width={24}
+        height={24}
+      />
     </section>
   );
 }

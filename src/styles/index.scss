@@ -14,6 +14,7 @@ $light-bluish-color: #abc1e1;
 $white-color: #fff;
 $green-color: #26d782;
 $red-color: #ee5454;
+
 $border-color-light: #edf1f9;
 $border-color-dark: #2d3949;
 
@@ -65,15 +66,19 @@ body[data-theme='light'] {
   }
 
   .selection {
-    @include theme-styled($light-grey-color, $dark-navy-color);
+    @include theme-styled($white-color, $dark-navy-color);
   }
 
   .selection-quiz {
-    @include theme-styled($light-grey-color, $dark-navy-color);
+    @include theme-styled($white-color, $dark-navy-color);
   }
 
   .header__title-text {
     color: $dark-navy-color;
+  }
+
+  .result__block {
+    @include theme-styled($light-grey-color, $dark-navy-color);
   }
 }
 
@@ -98,6 +103,13 @@ body[data-theme='dark'] {
 
   .header__title-text {
     color: $light-grey-color;
+  }
+
+  .result__block {
+    @include theme-styled($navy-color, $light-grey-color);
+  }
+  .btn {
+    box-shadow: none;
   }
 }
 
@@ -150,6 +162,10 @@ body[data-theme='dark'] {
   font-size: $font-size-h2;
 }
 
+h2 {
+  font-size: $font-size-h2;
+}
+
 .h2-sub-title {
   font-weight: 400;
 }
@@ -189,11 +205,41 @@ p {
     background-color: lighten($purple-color, 10%);
   }
 }
+
 .link {
   cursor: pointer;
   display: flex;
   align-items: center;
 }
+
+@media screen and (max-width: 1050px) {
+  .container {
+    max-width: 700px;
+  }
+  .bg::after {
+    display: none;
+  }
+  .bg::before {
+    top: -890px;
+    left: -935px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  h2 {
+    font-size: 40px;
+  }
+
+  .btn {
+    width: 327px;
+    height: 56px;
+    padding: 0px 0;
+    border-radius: 12px;
+    margin-top: 12px;
+    font-size: 18px;
+  }
+}
+
 @import '../components/common/header/index.scss';
 @import '../components/common/selection/index.scss';
 @import '../components/common/section-icon/index.scss';

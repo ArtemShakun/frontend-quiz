@@ -40,14 +40,14 @@ export function QuizStarted({
 
   return (
     <>
-      <section>
+      <section className="content__block">
         <p style={{ fontStyle: 'italic' }}>
           Question {currentQuizIndex + 1} of 10
         </p>
         <div className="content__title h4">{currentQuestion.question}</div>
         <ProgressBar progress={currentQuizIndex + 1} />
       </section>
-      <section>
+      <section className="content__section">
         {currentQuestion.options.map((option, index) => (
           <SelectionQuiz
             key={option.id}

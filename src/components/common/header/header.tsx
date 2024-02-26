@@ -14,6 +14,7 @@ export function Header({ logo }: PropsHeaderType) {
           {logo?.icon && (
             <Link href="/" className="link">
               <Image
+                className="header__img"
                 src={`/assets/${logo.icon}`}
                 alt={logo.title}
                 width={56}

@@ -54,3 +54,32 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+@media screen and (max-width: 700px) {
+  .theme-switcher {
+    &-img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .switch {
+    width: 34px;
+    height: 20px;
+    margin: 0 8px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: '';
+    height: 12px;
+    width: 12px;
+    left: 2px;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    transform: translateX(15px);
+  }
+}

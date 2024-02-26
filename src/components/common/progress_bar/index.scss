@@ -14,3 +14,11 @@
     border-radius: 40;
   }
 }
+
+@media screen and (max-width: 1050px) {
+  .progress-bar {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 768px;
+  }
+}

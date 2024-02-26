@@ -7,6 +7,8 @@
     width: 565px;
     height: 388px;
     background-color: $white-color;
+    box-shadow: $shadow;
+    border-radius: 20px;
     &-inf {
       display: flex;
       flex-direction: column;
@@ -21,5 +23,33 @@
         color: $grey-navy-color;
       }
     }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .result {
+    &__block {
+      width: 100%;
+      margin-top: 64px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .result {
+    &__block {
+      width: 327px;
+      height: 242px;
+      margin-top: 64px;
+    }
+  }
+  .title-result {
+    font-size: 40px;
+  }
+  .result__block-inf-title {
+    font-size: 18px;
+  }
+  .result__block-inf-score {
+    font-size: 88px;
   }
 }

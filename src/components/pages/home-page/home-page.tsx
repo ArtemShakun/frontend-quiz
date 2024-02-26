@@ -19,11 +19,17 @@ export function Content(data: PropsContentType) {
   return (
     <main className="content">
       <div className="bg"></div>
-      <section>
-        <div dangerouslySetInnerHTML={{ __html: title }}></div>
-        <div dangerouslySetInnerHTML={{ __html: subtitle }}></div>
+      <section className="content__block">
+        <div
+          className="content__title"
+          dangerouslySetInnerHTML={{ __html: title }}
+        ></div>
+        <div
+          className="content__subtitle"
+          dangerouslySetInnerHTML={{ __html: subtitle }}
+        ></div>
       </section>
-      <section>
+      <section className="content__section">
         {cards?.map(item => (
           <Link href={item.title} key={item.title}>
             <Selection {...item} />
