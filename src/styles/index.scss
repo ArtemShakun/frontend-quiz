@@ -64,6 +64,10 @@ body[data-theme='light'] {
     border: 144px solid $border-color-light;
   }
 
+  .selection {
+    @include theme-styled($light-grey-color, $dark-navy-color);
+  }
+
   .selection-quiz {
     @include theme-styled($light-grey-color, $dark-navy-color);
   }
@@ -80,6 +84,11 @@ body[data-theme='dark'] {
   .bg::before,
   .bg::after {
     border: 144px solid $border-color-dark;
+  }
+
+  .selection {
+    box-shadow: none;
+    @include theme-styled($navy-color, $light-grey-color);
   }
 
   .selection-quiz {
@@ -180,7 +189,11 @@ p {
     background-color: lighten($purple-color, 10%);
   }
 }
-
+.link {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
 @import '../components/common/header/index.scss';
 @import '../components/common/selection/index.scss';
 @import '../components/common/section-icon/index.scss';
